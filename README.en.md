@@ -8,6 +8,7 @@ Public AMBER benchmark results of a community self-hosted Qwen3.8-27B inference 
 - Each issue lives in `results/YYYY-Www.md`: same cases, same harness, full library (23 cases / 26 papers).
 - Fixed report shape: case-set size and hashes, per-case scores and pass/fail, terminal states, token usage and latency, environment fingerprints, and qualitative verdicts written under evidence discipline.
 - Cases, oracles, transcripts, and intermediate artifacts are **never published** (see "Publication discipline").
+- Sister repos: [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-opencode](https://github.com/getaskclaw/amber-opencode), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy).
 
 ## The lane (what makes this repo different)
 
