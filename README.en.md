@@ -35,6 +35,7 @@ Three extra caveats therefore apply to every number here:
 | Issue | Content | Verdict |
 |---|---|---|
 | [2026-W38](results/2026-W38.md) | Qwen3.8-27B (NVFP4) @ endpoint-default band, debut full run | case-level 14/23; strong build/text/ops/req-drift (perfect on the hard discriminator), zero passes on review/verify/vision/ui-build; effort knob proven inert; wall 5-20× strong lanes |
+| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 3 held here | 3 W38 debut cells held; the 14/23 headline may move up, and the qualitative section must be reviewed in step |
 
 ## Disclaimer
 
