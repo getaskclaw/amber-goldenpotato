@@ -5,9 +5,11 @@ Public AMBER benchmark results of a community self-hosted Qwen3.8-27B inference 
 
 ## What this is
 
-- Each issue lives in `results/YYYY-Www.md`: same cases, same harness, full library (23 cases / 26 papers).
-- Fixed report shape: case-set size and hashes, per-case scores and pass/fail, terminal states, token usage and latency, environment fingerprints, and qualitative verdicts written under evidence discipline.
-- Cases, oracles, transcripts, and intermediate artifacts are **never published** (see "Publication discipline").
+- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a multi-variant case has several runs).
+
+- Each issue lives in `results/YYYY-Www.md`: same cases, same harness (the program that runs the exam and scores it), full library (23 cases / 26 papers).
+- Fixed report shape: case-set size and hashes, per-case scores and pass/fail, terminal states (how the run process exited), token usage and latency, environment fingerprints, and qualitative verdicts written under evidence discipline.
+- Cases, oracles, transcripts (full answer logs), and intermediate artifacts are **never published** (see "Publication discipline").
 - Sister repos: [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-opencode](https://github.com/getaskclaw/amber-opencode), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy).
 
 ## The lane (what makes this repo different)
@@ -24,7 +26,7 @@ Three extra caveats therefore apply to every number here:
 
 1. Published: scores and aggregates, token usage, speed, qualitative verdicts.
 2. Never published: case content, oracles/scorers, transcripts, candidate workspaces, any intermediate that could reconstruct a case, endpoint credentials.
-3. Every issue pins: model ID, effort band, date (UTC), harness version, per-case content hash (bundle_sha), cross-checked against the public hash index in [amber](https://github.com/getaskclaw/amber) to prove the case set is unchanged.
+3. Every issue pins: model ID, effort band (the thinking-effort setting), date (UTC), harness version, per-case content hash (bundle_sha (per-case content-hash fingerprint)), cross-checked against the public hash index in [amber](https://github.com/getaskclaw/amber) to prove the case set is unchanged.
 4. Case IDs and structure are private: public results use stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes only; internal case names, variant names, and case descriptions never appear.
 5. Tone: this is a community measurement, not an attack on anyone. Data talks; wording stays restrained.
 
