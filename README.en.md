@@ -2,6 +2,8 @@
 
 > ⚠️ **Correction (2026-10-02, second)**: one defense-axis case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the candidate delivered, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
 
+> **2026-10-07 update**: A-24bcf707 (ops): the grader required the named removal commit to have deleted lines inside the feature's own files; the prompt asks for the commit where the feature was removed or lost and does not state that requirement. This lane (Qwen3.8-27B) failed only that check, so the cell is recorded NA (held) instead of a loss. The pass count is unchanged (15'/24 on the board); losses go 8→7 and NA 1→2; the ops axis stays 5/6 with 1 NA. The cell is updated in the [W38 issue](results/2026-W38.md). See the [amber spec repo correction of 2026-10-07](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.en.md).
+
 Public AMBER benchmark results of a community self-hosted Qwen3.8-27B inference endpoint (run by linux.do user goldenpotato) — cases private, results public.
 中文说明见 [README.md](README.md)。
 
