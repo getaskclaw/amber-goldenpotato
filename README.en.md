@@ -6,6 +6,8 @@
 
 > **2026-10-07 update**: A-24bcf707 (ops): the grader required the named removal commit to have deleted lines inside the feature's own files; the prompt asks for the commit where the feature was removed or lost and does not state that requirement. This lane (Qwen3.8-27B) failed only that check, so the cell is recorded NA (held) instead of a loss. The pass count is unchanged (15'/24 on the board); losses go 8→7 and NA 1→2; the ops axis stays 5/6 with 1 NA. The cell is updated in the [W38 issue](results/2026-W38.md). See the [amber spec repo correction of 2026-10-07](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.en.md).
 
+> **2026-10-07 update (second)**: A-cdc3d11a (review): On one review case the grader counted every sub-point of a well-formed finding as a separate unproven claim and treated real defects outside its short answer list as false alarms, so a correct, well-formatted review could not reach the passing line; the case is held on every lane, denominator unchanged, until the grader and exam room are repaired and the case is re-sat. This lane (Qwen3.8-27B) goes from a loss to NA (held) on this cell; the case moves from a loss to NA on 27 lanes and no sitting is re-run. The pass count is unchanged (15'/24 on the board); losses go 7→6 and NA 2→3; the review axis stays 0/2 with 1 NA. The cell is updated in the [W38 issue](results/2026-W38.md). See the [amber spec repo correction of 2026-10-07 (A-cdc3d11a)](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-cdc3d11a.en.md).
+
 Public AMBER benchmark results of a community self-hosted Qwen3.8-27B inference endpoint (run by linux.do user goldenpotato) — cases private, results public.
 
 ## What this is
