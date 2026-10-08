@@ -1,46 +1,52 @@
-[简体中文](README.zh-CN.md) · English
+[English](README.en.md) · 简体中文
 
 # amber-goldenpotato
 
-> ⚠️ **Correction (2026-10-02, second)**: one defense case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the model gave in, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
+> ⚠️ **更正（2026-10-02，另一项）**：防御轴的一案 A-d511f9e8 在所有车道上改记 NA（考场判的不是考生交付的文件，判分还要求了题面没写的事）。分母不变，**过案数不变**，每条道的总分都带 `'`。本仓各期成绩表里这一格请按 NA 读，其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)为准。
 
-> **2026-10-07 update**: A-24bcf707 (ops): the grader required the named removal commit to have deleted lines inside the feature's own files; the prompt asks for the commit where the feature was removed or lost and does not state that requirement. This lane (Qwen3.8-27B) failed only that check, so the cell is recorded NA (held) instead of a loss. The pass count is unchanged (15'/24 on the board); losses go 8→7 and NA 1→2; the ops axis stays 5/6 with 1 NA. The cell is updated in the [W38 issue](results/2026-W38.md). See the [amber spec repo correction of 2026-10-07](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.en.md).
+> **2026-10-07 更新**：A-24bcf707（运维）：判分器要求被指的移除提交在功能自身的文件上有删除行；题面问的是功能被移除或丢失的那个提交，并没有写这个要求。本车道（Qwen3.8-27B）只挂了这一项检查，所以这一格改记 NA（挂起），不记负。过案数不变（榜上 15'/24）；负案 8→7，NA 1→2；运维轴 5/6 不变、另有 1 个 NA。[W38 期文](results/2026-W38.md)里该格已照此改记。见[规范仓 2026-10-07 的更正](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.md)。
 
-Public AMBER benchmark results of a community self-hosted Qwen3.8-27B inference endpoint (run by linux.do user goldenpotato) — cases private, results public.
+用私有题库 **AMBER** 实测社区玩家 goldenpotato 自部署的 Qwen3.8-27B 推理端点，只公开结果，不公开题目。
 
-## What this is
+## 这是什么
 
-- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a case with more than one variant has more runs).
-- Each issue lives in `results/YYYY-Www.md`: same cases, same harness (the program that runs the exam and scores it), full library (23 cases / 26 papers).
-- Fixed report shape: case-set size and hashes, per-case scores and pass/fail, terminal states (how the run ended), token usage and latency, environment fingerprints, and verdicts written under evidence rules.
-- Cases, oracles, transcripts (full answer logs), and intermediate artifacts are **never published** (see "Publication rules").
-- Sister repos: [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-opencode](https://github.com/getaskclaw/amber-opencode), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy).
+- 「道」= 同一个模型名在不同家的卖场/接口；「案」= 一道题，「卷」= 一场考试记录（一案多卷 = 一道题的几个变体场次）。
 
-## The lane (what makes this repo different)
+- 每期 `results/YYYY-Www.md`：同题、同 harness（跑考试并记分的程序），对目标模型跑全库（23 案 / 26 卷）。
+- 一期固定报告：题集规模与哈希、每案得分与通过/失败、终端终态（程序跑完时的退出状态）、token 用量与时延、环境指纹、按证据纪律写的定性裁决。
+- 题目、oracle（判分器）、transcript（答题全过程记录）、中间产物**永不公开**（见下「发布纪律」）。
+- 姐妹仓：[amber-gpt](https://github.com/getaskclaw/amber-gpt)、[amber-crof](https://github.com/getaskclaw/amber-crof)、[amber-ollama](https://github.com/getaskclaw/amber-ollama)、[amber-devin](https://github.com/getaskclaw/amber-devin)、[amber-deepseek](https://github.com/getaskclaw/amber-deepseek)、[amber-commandcode](https://github.com/getaskclaw/amber-commandcode)、[amber-opencode](https://github.com/getaskclaw/amber-opencode)、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)、[amber-kimi](https://github.com/getaskclaw/amber-kimi)、[amber-doubao](https://github.com/getaskclaw/amber-doubao)、[amber-stepfun](https://github.com/getaskclaw/amber-stepfun)。
+- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移——题中要求中途变化），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
 
-The subject is a **community self-hosted endpoint**, not a vendor service: a hobbyist serving NVIDIA's official NVFP4-quantized Qwen3.8-27B on 3× V100 32GB (heavily patched vLLM, TP3, FP8 KV cache), opened to the public for a limited stress-test window.
+## 渠道说明（本仓的特殊性）
 
-Three extra caveats therefore apply to every number here:
+本仓考的是**社区个人自部署端点**，不是厂商服务：一位 linux.do 网友（goldenpotato）用 3 张 V100 32G 跑 NVIDIA 官方 NVFP4 量化的 Qwen3.8-27B（魔改 vLLM TP3，KV cache FP8），限时开放给社区压测。
 
-1. **One-shot snapshot**: the endpoint was time-limited (~one day per the launch post). Once offline, the row cannot be measured again. This is an archive sample, not a lane we can track.
-2. **Shared queue**: the endpoint caps public concurrency at 3, shared with all visitors; the bench ran strictly serial to stay polite. Wall-clock figures include public queue time — carry this caveat when comparing wall times across repos.
-3. **Quantization sample**: how W-NVFP4 (partial FP8 layers) + FP8 KV cache behaves on agentic work is itself one of the things being measured.
+因此本仓成绩带三条额外口径：
 
-## Publication rules (hard rules)
+1. **一次性快照**：端点限时开放（首发公告称约一天），关服后无法复测。本期成绩是考古标本，不是可持续追踪的车道。
+2. **排队环境**：端点公共并发仅 3 路且与全论坛访客共享，考场为不给端点添堵采用单路串行。墙钟时间因此包含公共排队，跨仓比 wall 时须带此口径。
+3. **量化实测样本**：W-NVFP4（部分层 FP8）+ KV-FP8 的激进量化在 agentic 实战题上的表现，本身就是本期的观测对象之一。
 
-1. Published: scores and totals, token usage, speed, verdicts.
-2. Never published: case content, oracles/graders, transcripts, candidate workspaces, any intermediate that could rebuild a case, endpoint credentials.
-3. Every issue pins: model ID, effort band (the thinking-effort setting), date (UTC), harness version, per-case content hash (bundle_sha (per-case content-hash fingerprint)), checked against the public hash index in [amber](https://github.com/getaskclaw/amber) to prove the case set is unchanged.
-4. Case IDs and structure are private: public results use stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes only; internal case names, variant names, and case descriptions never appear.
-5. Tone: this is a community measurement, not an attack on anyone. Data talks; wording stays simple.
+## 发布纪律（红线）
 
-## Results index
+1. 只发：分数与聚合、token 用量、速度、定性裁决。
+2. 永不发：题目内容、oracle/判分器、transcript、考生工作区、任何能复原题面的中间产物、端点访问凭证。
+3. 每期必钉：模型 ID、effort 档（思考力度档位）、日期（UTC）、harness 版本、每案内容哈希（bundle_sha，每题内容的哈希指纹）。哈希用于对照 [amber](https://github.com/getaskclaw/amber) 的公开哈希清单，自证题集未变。
+4. 案号与题目结构属私有面：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+ bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
+5. 基调：这是社区实测，不是对任何人的攻击。数据说话，措辞克制。
 
-| Issue | Content | Verdict |
+## 一个方法论前提
+
+同一模型、同一端点，两次跑也可能不同分——推理参数、负载、服务端版本都在漂；个人自部署端点的负载漂移比厂商服务更大。所以这里的一切结论都带日期与档位。单日数字是快照，不是定律。
+
+## 结果索引
+
+| 期 | 内容 | 结论 |
 |---|---|---|
-| [2026-W38](results/2026-W38.md) | Qwen3.8-27B (NVFP4) @ endpoint-default band, debut full run | case-level 14/23; strong build/text/ops/req-drift (perfect on the hard discriminator), zero passes on review/verify/vision/ui-build; effort knob proven inert; wall 5-20× strong lanes |
-| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 3 held here | 3 W38 debut cells held; the 14/23 headline may move up, and the verdict section must be re-read in step |
+| [2026-W38](results/2026-W38.md) | Qwen3.8-27B（NVFP4）@ 端点默认档 全库首考 | 案级 14/23；施工/文本/运维/漂移强（含 hard 区分器满分），审查/核验/视觉/前端 0 案过；effort 旋钮实证无效；wall 约为强车道 5-20 倍 |
+| [2026-W38 更正特刊](results/2026-W38-correction.md) | W38 全库复核:本仓改判 0 格 · 挂起 3 格 | W38 首考 3 格挂起;若翻案 14/23 可能上移,定性段须同步复核 |
 
-## Disclaimer
+## 免责
 
-Not affiliated with or sponsored by the endpoint operator, the Qwen team, or NVIDIA. Scores are snapshots of a specific date and load; they are not buying advice.
+与端点运营者、Qwen 团队、NVIDIA 无任何隶属/赞助关系。分数是特定日期、特定负载下的快照，不构成任何选型建议。
